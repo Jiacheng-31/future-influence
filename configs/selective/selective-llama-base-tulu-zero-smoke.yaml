@@ -1,0 +1,46 @@
+### One-step functional smoke test using 20 existing offline-scored samples.
+selective_training:
+  enabled: true
+  normalization_exponent: 0.5
+  ignore_zero_scores_only: true
+  score_file: data/selection-fast-fix/meta-llama-3-8b_tulu3_test20.jsonl
+
+### model
+model_name_or_path: ../model/Meta-Llama-3-8B
+trust_remote_code: true
+
+### method
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_target: all
+
+### dataset
+dataset_dir: configs
+dataset: tulu_3_sft_mixture
+template: llama3
+cutoff_len: 4096
+max_samples: 8
+preprocessing_num_workers: 4
+dataloader_num_workers: 0
+overwrite_cache: true
+
+### output
+output_dir: outputs/selective-llama-base-tulu-zero-smoke
+logging_steps: 1
+save_steps: 1
+save_only_model: false
+plot_loss: false
+overwrite_output_dir: false
+report_to: none
+
+### train
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 1
+learning_rate: 1.0e-4
+max_steps: 1
+warmup_ratio: 0.0
+optim: adamw_torch
+bf16: true
+gradient_checkpointing: true
+ddp_timeout: 180000000

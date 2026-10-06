@@ -1,0 +1,84 @@
+{
+  "openr1_math_220k": {
+    "file_name": "../data/datasets/OpenR1-Math-220k/jsonl/train.jsonl",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages"
+    },
+    "tags": {
+      "role_tag": "role",
+      "content_tag": "content",
+      "user_tag": "user",
+      "assistant_tag": "assistant",
+      "system_tag": "system"
+    }
+  },
+  "tulu_3_sft_mixture": {
+    "file_name": "../data/datasets/tulu-3-sft-mixture/jsonl/train_200k.jsonl",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages"
+    },
+    "tags": {
+      "role_tag": "role",
+      "content_tag": "content",
+      "user_tag": "user",
+      "assistant_tag": "assistant",
+      "system_tag": "system"
+    }
+  },
+  "ultrachat_200k_sft": {
+    "file_name": "../data/datasets/ultrachat_200k/jsonl/train_sft.jsonl",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages"
+    },
+    "tags": {
+      "role_tag": "role",
+      "content_tag": "content",
+      "user_tag": "user",
+      "assistant_tag": "assistant",
+      "system_tag": "system"
+    }
+  },
+  "openmath_reasoning": {
+    "file_name": "../data/datasets/OpenMathReasoning/jsonl/shards",
+    "formatting": "alpaca",
+    "columns": {
+      "prompt": "problem",
+      "response": "generated_solution"
+    }
+  },
+  "openr1_math_100k_le16384": {
+    "file_name": "../data/datasets/OpenR1-Math-220k/jsonl/train_le16384_100k_cot.jsonl",
+    "formatting": "alpaca",
+    "columns": {
+      "prompt": "problem",
+      "response": "response"
+    }
+  },
+  "openmath_cot_100k_le16384": {
+    "file_name": "../data/datasets/OpenMathReasoning/jsonl/cot_le16384_100k.jsonl",
+    "formatting": "alpaca",
+    "columns": {
+      "prompt": "problem",
+      "response": "generated_solution"
+    }
+  },
+  "openr1_math_100k_le16384_quality_complete": {
+    "file_name": "../data/datasets/OpenR1-Math-220k/jsonl/train_le16384_cot_quality_strict_complete_100k.jsonl",
+    "formatting": "alpaca",
+    "columns": {
+      "prompt": "problem",
+      "response": "response"
+    }
+  },
+  "openmath_cot_100k_le16384_quality_complete": {
+    "file_name": "../data/datasets/OpenMathReasoning/jsonl/cot_le16384_quality_strict_complete_100k.jsonl",
+    "formatting": "alpaca",
+    "columns": {
+      "prompt": "problem",
+      "response": "generated_solution"
+    }
+  }
+}

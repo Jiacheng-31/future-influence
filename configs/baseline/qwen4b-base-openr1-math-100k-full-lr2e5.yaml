@@ -1,0 +1,40 @@
+### model
+model_name_or_path: ../model/Qwen3-4B-Base
+trust_remote_code: true
+flash_attn: fa2
+
+### method
+stage: sft
+do_train: true
+finetuning_type: full
+deepspeed: ../Qwen/LLaMA-Factory/examples/deepspeed/ds_z3_config.json
+
+### dataset
+dataset_dir: configs
+dataset: openr1_math_100k_le16384
+template: qwen3
+cutoff_len: 16384
+preprocessing_num_workers: 16
+dataloader_num_workers: 4
+
+### output
+output_dir: outputs/qwen4b-base-openr1-math-100k-full-lr2e-5
+logging_steps: 10
+save_steps: 100
+save_only_model: false
+plot_loss: true
+overwrite_output_dir: false
+report_to: none
+
+### train
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 16
+learning_rate: 2.0e-5
+num_train_epochs: 1.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+optim: adamw_torch
+weight_decay: 0.01
+bf16: true
+gradient_checkpointing: true
+ddp_timeout: 180000000

@@ -1,0 +1,15 @@
+# Observed on aistudio_cpu, training environment, 2026-10-04.
+# Python 3.11.15; CUDA build of torch. Reference only, not a portable lock file.
+# Install the external sibling Qwen/LLaMA-Factory from its project environment.
+torch==2.11.0+cu128
+transformers==5.2.0
+datasets==4.0.0
+accelerate==1.11.0
+deepspeed==0.18.9
+omegaconf==2.3.0
+PyYAML==6.0.3
+peft==0.18.1
+trl==0.24.0
+numpy==2.4.3
+tqdm==4.67.3
+# llamafactory==0.9.5.dev0 (external source checkout)
